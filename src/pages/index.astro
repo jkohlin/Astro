@@ -1,5 +1,7 @@
 ---
-import Tour from '../components/Tour.astro';
+import {Markdown} from 'astro/components'
+import AstroComp from '../components/AstroComp.astro';
+import VueComp from '../components/VueComp.vue';
 ---
 
 <!doctype html>
@@ -21,6 +23,7 @@ import Tour from '../components/Tour.astro';
             gap: 1em;
             max-width: min(100%, 68ch);
         }
+        p {font-size: 0.5em;}
     </style>
 </head>
 <body>
@@ -28,11 +31,17 @@ import Tour from '../components/Tour.astro';
         <header>
             <div>
                 <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-                <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+                <h1>Welcome to Astro</h1>
+                <p>You trustboys! This is the index page (it's an .astro-file). </p>
+                <p>It's in the pages folder and is called 
+                <Markdown>`index.astro`</Markdown>
+                </p>
             </div>
         </header>
 
-        <Tour />
+        <AstroComp />
+        <VueComp from-astro="42"/>
     </main>
+    <footer>Cheers!</footer>
 </body>
 </html>
